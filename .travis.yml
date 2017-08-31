@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+ - 2.2.5
+ - 2.3.0
+ - 2.4.0-dev
+
+
+notifications:      
+  email: false
+
+sudo: false
+
+install:
+  - ruby test/test_two_array_is_equal.rb
+
+
+
