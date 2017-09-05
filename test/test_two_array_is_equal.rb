@@ -1,5 +1,4 @@
 # -*- encoding : utf-8 -*-
-
 require 'minitest/autorun'
 require_relative '../methods/compare_array_methods'
 
@@ -25,5 +24,11 @@ class TestTwoArrayIsEqual < Minitest::Test
   def mocked_obj
     self
   end
-
 end
+ 
+
+
+
+
+
+
