@@ -16,10 +16,6 @@ class TwoArrayIsEqual
 
       random_arr = (0..array_size-1).to_a.shuffle.map {|e|e.to_s}
 
-      x.report("sort:") do
-        sort_compare(origin_arr, random_arr)
-      end
-
       x.report("hash:") do
         hash_compare(origin_arr, random_arr)
       end
@@ -30,6 +26,11 @@ class TwoArrayIsEqual
      
       x.report("subtract:") do
         subtract(origin_arr, random_arr)
+      end
+
+      # 放在最后 会改变数组排序
+      x.report("sort:") do
+        sort_compare(origin_arr, random_arr)
       end
     end
   end

@@ -7,7 +7,7 @@ module Algorithm
 
     # 将其中一个数组转化为 格式为 { 数组元素 => 数组元素个数 }  的hash
     # 遍历另一个数组比较
-    # 占用额外的 O(2N) 空间
+    # 占用额外的 O(N) 空间
     def hash_compare(a1, a2)
      return false unless a1.size == a2.size
      hash = {}
@@ -35,7 +35,7 @@ module Algorithm
     end
 
     # ruby 内置的数组相减
-    # 占用额外的 O(2N) 空间
+    # 占用额外的 O(N) 空间
     def subtract(a1, a2)
      (a1 - a2) == [] && (a2 - a1) == []
     end
