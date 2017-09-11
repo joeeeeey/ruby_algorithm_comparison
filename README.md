@@ -1,43 +1,44 @@
 # 比较 ruby 实现的不同算法
 
-
 ## 一. 比较两个数组完全相等
 
-### 运行
+### Run
 
 ```bash
-$ ruby compare_two_arrays.rb 
+$ ruby run/compare_two_arrays.rb 
  => 请输入要计算的数组个数，回车默认 5_000_000 个: 
 ```
 
 ### 输出
 
 5_000_000 个元素
+ruby version: 2.1.4
+
+  method   |  user  |system | total         |real     | extra-memery
+:---------:|:------:|:-----:|:----------|:-------------|:-------------|
+sort:| 16.050000  | 0.100000 | 16.150000 |( 16.234005)|
+hash: |11.040000 |  0.370000 | 11.410000| ( 11.870481) |
+md5: |24.970000 |  0.700000 | 25.670000 |( 26.235543)|
+subtract: |22.530000  | 1.150000  |23.680000 |( 24.102552)|
+
+ruby version: 2.4.1(fast hash)
 
   method   |  user  |system | total         |real     | extra-memery
 :---------:|:------:|:-----:|:----------|:-------------|:-------------|
 sort:  |14.490000  | 0.160000 | 14.650000 |(14.983050) | - |
-hash: | 12.710000 |  0.380000 | 13.090000 | (13.341076) | O(N) | 
+hash: | 7.980000 |  0.380000 |  8.290000 | (8.324756) | O(N) | 
 md5:  |19.470000 |  0.490000 | 19.960000 | (21.023923) | - |
 subtract: | 19.880000  | 0.350000 | 20.230000 | (21.334710) | O(N) |
 
+## 二. 数组排序
 
+### Run
 
-### 结论
-
-选取时间空间复杂度最低的算法: sort
-
-```ruby
-  def sort_compare(a1, a2)
-    return false unless a1.size == a2.size
-    a1.sort!
-    a2.sort!
-    a1.each_with_index do |e, index|
-      next if e == a2[index]
-      return false 
-    end
-    return true 
-  end
+```bash
+$ ruby run/sort_array.rb 
+ => 请输入要计算的数组个数，回车默认 5_000_000 个: 
 ```
 
-## TODO 其他算法
+## TODO LIST
+* 补全排序算法
+* 增加其他算法

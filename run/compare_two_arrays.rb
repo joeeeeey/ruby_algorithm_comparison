@@ -1,5 +1,5 @@
 require 'benchmark'
-require_relative 'methods/compare_array_methods'
+require_relative '../methods/compare_array_methods'
 
 class TwoArrayIsEqual
   include Algorithm::ArrayComparsion

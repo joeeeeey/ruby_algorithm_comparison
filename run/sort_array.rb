@@ -1,5 +1,5 @@
 require 'benchmark'
-require_relative 'methods/sort_methods'
+require_relative '../methods/sort_methods'
 
 class SortArray
   include Algorithm::ArraySort
@@ -29,13 +29,13 @@ class SortArray
 
 
 
-    # Benchmark.bm do |x|
-    #   array = (0..array_size-1).to_a.shuffle
+    Benchmark.bm do |x|
+      array = (0..array_size-1).to_a.shuffle
 
-    #   x.report("ruby_sort:") do
-    #     array.sort!
-    #   end
-    # end
+      x.report("ruby_sort:") do
+        array.sort!
+      end
+    end
 
   end
 end
