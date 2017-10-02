@@ -68,8 +68,66 @@ module Algorithm
         sorted + left + right
       end
 
+      # from ruby-china https://ruby-china.org/topics/20569
+      def bubble_sort!
+        f = 1
+        while f < self.length
+          (0...(self.length-f)).to_a.each do |i|
+            self[i], self[i+1] = self[i+1], self[i] if self[i] > self[i+1]
+          end
+          f += 1
+        end
+        self
+      end
+
+      # from ruby-china https://ruby-china.org/topics/20569
+      # def quick_sort!
+      #   return [] if self.empty?
+      #   x, *a = self
+      #   left, right = a.partition{|t| t < x}
+      #   left.quick_sort! + [x] + right.quick_sort!
+      # end
+
+
+      # 快速排序
+      def quick_sort!(left=0, r=self.size-1)
+        if left < r
+          q = Array.random_partition(self, left, r)
+          quick_sort!(left, q-1)
+          quick_sort!(q+1, r)
+        end
+        self    
+      end
+
+      def self.partition(array, left, r)
+        x = array[r]
+        i = left - 1
+        for j in left..(r-1)
+          if array[j] <= x 
+            i+=1
+            array.exchange(i,j)
+          end
+        end
+        array.exchange(i+1,r)
+        return i+1
+      end
+
+      def self.random_partition(array, left, r)
+        i = rand(left..r)
+        array.exchange(i,r)
+        return partition(array, left, r)
+      end
+
+      def exchange(x,y)
+        ex = self[x]
+        self[x] = self[y]
+        self[y] = ex
+      end
+
+
+
       # 定义无叹号方法
-      %w(selection merge insertion).each do |metd|
+      %w(selection merge insertion bubble_sort quick_sort).each do |metd|
         define_method("#{metd}_sort") do
           # dup 即为 self 的 clone 对象
           self.dup.send("#{metd.to_s}_sort!") 

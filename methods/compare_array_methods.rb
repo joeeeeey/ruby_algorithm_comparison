@@ -34,12 +34,6 @@ module Algorithm
      hash.size == count
     end
 
-    # ruby 内置的数组相减
-    # 占用额外的 O(N) 空间
-    def subtract(a1, a2)
-     (a1 - a2) == [] && (a2 - a1) == []
-    end
-
     # 对比数组元素的摘要值之和，这边使用 md5 加密 (32*4位二进制数)
     # 仅仅对元素都是字符串的数组有效
     # 不占用额外空间
@@ -60,15 +54,21 @@ module Algorithm
     # 不占用额外空间
     # 相对较快
     def sort_compare(a1, a2)
-      # a1.sort == a2.sort
       return false unless a1.size == a2.size
-      a1.sort!
-      a2.sort!
-      a1.each_with_index do |e, index|
-        next if e == a2[index]
-        return false 
-      end
-      return true 
+      a1.sort == a2.sort
+      
+      # return false unless a1.size == a2.size
+      # a1.sort!
+      # a2.sort!
+      # a1.each_with_index do |e, index|
+      #   next if e == a2[index]
+      #   return false 
+      # end
+      # return true 
+    end
+
+    def sort_compare2(a1, a2)
+      a1.sort == a2.sort
     end
   end 
 end

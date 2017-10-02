@@ -4,7 +4,7 @@ require_relative '../methods/sort_methods'
 
 class TestSortArray < Minitest::Test
   include Algorithm::ArraySort
-  method_names = %w[insertion_sort! selection_sort! merge_sort!]
+  method_names = %w[insertion_sort! selection_sort! merge_sort! quick_sort!]
 
   method_names.each do |method_name|
     define_method "test_#{method_name}" do 

@@ -5,13 +5,14 @@ require_relative '../methods/compare_array_methods'
 class TestTwoArrayIsEqual < Minitest::Test
   include Algorithm::ArrayComparsion
 
-  method_names = %w[hash_compare subtract md5_compare sort_compare]
+  method_names = %w[hash_compare md5_compare sort_compare]
 
   compared_arraies = [{a1: [], a2: ['2'], should: false},
                       {a1: ['1'], a2: ['2'], should: false},
                       {a1: ['1','2'], a2: ['2','1'], should: true},
                       {a1: ['1','1'], a2: ['2','1'], should: false},
-                      {a1: ['1','2','2'], a2: ['2','1','2'], should: true} ]
+                      {a1: ['1','2','2'], a2: ['2','1','2'], should: true},
+                      {a1: ['1','2','2'], a2: ['1','2'], should: false} ]
 
   method_names.each do |method_name|
     define_method "test_#{method_name}" do 
