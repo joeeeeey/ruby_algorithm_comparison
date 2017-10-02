@@ -37,10 +37,13 @@ $ ruby run/sort_array.rb
  => 请输入要计算的数组个数，回车默认 10_000 个: 
 ```
 ### some benchmarking
-* ruby version: 2.1.4 
-* 10_000个不同的乱序元素:
 
-  method   |  user  |system | total    |     |real     
+#### ENV:
+1. Ruby Version: 2.1.4 
+2. 10_000个不同的乱序元素:
+
+
+  method   |  user  |system | total  |real     
 :---------:|:------:|:-----:|:----------|:-------------
 merge_sort:|  0.040000  | 0.000000 | 0.040000 |(  0.049320)
 quick_sort: | 0.030000 |  0.000000 |  0.030000 |(  0.035742)
@@ -48,10 +51,12 @@ insertion_sort:| 5.870000  | 0.050000  | 5.920000 |(  6.028975)
 selection_sort: | 9.340000  | 0.090000  | 9.430000 |(  9.461386)
 bubble_sort:| 12.720000  | 0.110000 | 12.830000 |( 13.049285)
 
-* ruby version: 2.4.1
-* 10_000个不同的乱序元素:
 
-  method   |  user  |system | total   |      |real     
+#### ENV:
+1. Ruby Version: 2.4.1 
+2. 10_000个不同的乱序元素:
+
+  method   |  user  |system | total   |real     
 :---------:|:------:|:-----:|:----------|:-------------
 merge_sort: | 0.030000 |  0.000000  | 0.030000 |(  0.032159)
 quick_sort: | 0.030000|   0.000000  | 0.030000| (  0.028015)
@@ -59,10 +64,11 @@ insertion_sort: | 4.480000 |  0.010000  | 4.490000 |(  4.501755)
 selection_sort: | 7.580000  | 0.120000 |  7.700000 |(  7.743162)
 bubble_sort: | 7.970000  | 0.030000 |  8.000000|(  8.038777)
 
-* ruby version: 2.4.1
-* 100_000个不同的乱序元素:
+#### ENV:
+1. Ruby Version: 2.4.1 
+2. 100_000个不同的乱序元素:
 
-  method   |  user  |system | total   |       |real     
+  method   |  user  |system | total   |real     
 :---------:|:------:|:-----:|:----------|:-------------
 merge_sort: | 0.350000  | 0.010000 |  0.360000 |(  0.367695)
 quick_sort: | 0.270000 |  0.000000  | 0.270000 |(  0.282230)
@@ -70,10 +76,10 @@ insertion_sort: | too slow
 selection_sort: | too slow
 bubble_sort: | too slow
 
-* ruby version: 2.4.1
-* 1000_000个不同的乱序元素:
+1. Ruby Version: 2.4.1 
+2. 1000_000个不同的乱序元素:
 
-  method   |  user  |system | total   |       |real     
+  method   |  user  |system | total   |real     
 :---------:|:------:|:-----:|:----------|:-------------
 merge_sort: | 3.930000  | 0.060000  | 3.990000 | (  4.013832)
 quick_sort: | 3.570000  | 0.020000  | 3.590000 |(  3.632866)
