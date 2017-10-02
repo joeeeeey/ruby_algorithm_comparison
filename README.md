@@ -40,7 +40,7 @@ $ ruby run/sort_array.rb
 * ruby version: 2.1.4 
 * 10_000个不同的乱序元素:
 
-  method   |  user  |system | total         |real     
+  method   |  user  |system | total    |     |real     
 :---------:|:------:|:-----:|:----------|:-------------
 merge_sort:|  0.040000  | 0.000000 | 0.040000 |(  0.049320)
 quick_sort: | 0.030000 |  0.000000 |  0.030000 |(  0.035742)
@@ -51,7 +51,7 @@ bubble_sort:| 12.720000  | 0.110000 | 12.830000 |( 13.049285)
 * ruby version: 2.4.1
 * 10_000个不同的乱序元素:
 
-  method   |  user  |system | total         |real     
+  method   |  user  |system | total   |      |real     
 :---------:|:------:|:-----:|:----------|:-------------
 merge_sort: | 0.030000 |  0.000000  | 0.030000 |(  0.032159)
 quick_sort: | 0.030000|   0.000000  | 0.030000| (  0.028015)
@@ -62,7 +62,7 @@ bubble_sort: | 7.970000  | 0.030000 |  8.000000|(  8.038777)
 * ruby version: 2.4.1
 * 100_000个不同的乱序元素:
 
-  method   |  user  |system | total         |real     
+  method   |  user  |system | total   |       |real     
 :---------:|:------:|:-----:|:----------|:-------------
 merge_sort: | 0.350000  | 0.010000 |  0.360000 |(  0.367695)
 quick_sort: | 0.270000 |  0.000000  | 0.270000 |(  0.282230)
@@ -73,7 +73,7 @@ bubble_sort: | too slow
 * ruby version: 2.4.1
 * 1000_000个不同的乱序元素:
 
-  method   |  user  |system | total         |real     
+  method   |  user  |system | total   |       |real     
 :---------:|:------:|:-----:|:----------|:-------------
 merge_sort: | 3.930000  | 0.060000  | 3.990000 | (  4.013832)
 quick_sort: | 3.570000  | 0.020000  | 3.590000 |(  3.632866)
