@@ -98,7 +98,7 @@ $ ruby run/birthday_problem.rb
 #### ENV:
 1. Ruby Version: 2.4.1 
 2. 概率: 0.5
-3. 天数: 10**13
+3. 天数: 10**15
 
   method   |  user  |system | total   |real     
 :---------:|:------:|:-----:|:----------|:-------------
