@@ -84,7 +84,7 @@ bubble_sort: | too slow
 merge_sort: | 3.930000  | 0.060000  | 3.990000 | (  4.013832)
 quick_sort: | 3.570000  | 0.020000  | 3.590000 |(  3.632866)
 
-## 二. 生日问题(某个星球一个屋里人数必须达到多少，才能使其中两人生日的机会达到某个概率)
+## 三. [生日问题](http://www.joeysblog.online/tou/posts/13)(某个星球一个屋里人数必须达到多少，才能使其中两人生日的机会达到某个概率)
 
 ### Run
 
@@ -100,6 +100,25 @@ $ ruby run/birthday_problem.rb
 2. 概率: 0.5
 3. 天数: 10**15
 
+```ruby
+# 由不等式推导的公式计算
+def formula(prob_greater_than, days)
+  (1 + (days * (8 * Math.log(1/(1-prob_greater_than), Math::E)))**0.5) / 2
+end
+
+# 迭代计算
+def interation(prob_greater_than, days)
+  prob = 0.0
+  numPeople = 1
+  until prob > prob_greater_than do 
+    prob = 1 - ( (1-prob) * (days - (numPeople - 1))/days )
+    numPeople += 1
+  end
+
+  return numPeople-1
+end
+```
+
   method   |  user  |system | total   |real     
 :---------:|:------:|:-----:|:----------|:-------------
 公式: | 0.000000  | 0.000000  | 0.000000| (  0.000242)
@@ -109,5 +128,22 @@ $ ruby run/birthday_problem.rb
 
 使用迭代:"在【1.0e+15】天中使两人生日相同概率达到【0.5】需要【37232975.0】人"
 
+## 四 计算阶乘
+
+```ruby
+# 递归，n < 10060, 否则堆栈过深
+def recursively(n)
+  if n==1
+    return 1
+  else
+    n * fact(n-1)
+  end
+end
+
+# 不会有堆栈过深问题
+def by_inject(n)
+  (1..n).inject(:*)
+end
+```
 ## TODO LIST
 * 增加其他算法

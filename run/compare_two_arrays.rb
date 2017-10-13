@@ -33,7 +33,3 @@ class TwoArrayIsEqual
 end
 
 TwoArrayIsEqual.new.compute
-
-
-
-

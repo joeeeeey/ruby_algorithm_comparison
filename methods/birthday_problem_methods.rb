@@ -11,7 +11,6 @@ module Algorithm
       end
 
       return numPeople-1
-      # p "Prob. of same birthday: #{numPeople-1}" 
     end
 
     def formula(prob_greater_than, days)
