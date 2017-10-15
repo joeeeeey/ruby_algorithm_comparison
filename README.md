@@ -145,5 +145,47 @@ def by_inject(n)
   (1..n).inject(:*)
 end
 ```
+
+## 五 计算斐波那契数
+```ruby
+# 递归法
+def fib(n)
+  if n <= 1
+    n 
+  else 
+    fib(n-1) + fib(n-2)  
+  end
+end
+
+# 增加缓存法
+# 将之前计算过的数存入 Hash
+def fib_cache(n, cache = {})
+  return n if n == 0 || n == 1
+  cache[n] ||= fib_cache(n-1, cache) + fib_cache(n-2, cache)
+end
+
+# 最快法
+def fast_fib(n)
+  _fib(n)[0]
+end
+
+def _fib(n)
+  if n == 0
+    return [0, 1]
+  else
+    a, b = _fib(n / 2)
+    c = a * (b * 2 - a)
+    d = a * a + b * b
+
+    if n % 2 == 0
+      [c, d]
+    else
+      [d, c + d]
+    end
+  end
+end
+``` 
+
 ## TODO LIST
 * 增加其他算法
+
